@@ -9,6 +9,8 @@ object camion {
         return carga.find({c => c.peso() == unPeso}) 
     } 
 
+    method loPrimeroConPeligrosidad(nivelDePeligrosidad) = carga.find({a => a.peligrosidad()}) == nivelDePeligrosidad
+
     method cargaConPeligrosidad(unaPeligrosidad) {
         return carga.find({c => c.peligrosidad() == unaPeligrosidad})
     } 
@@ -17,7 +19,11 @@ object camion {
       return carga.filter({c => c.peligrosidad() > unaPeligrosidad})
     }
 
-    method estaExcedido() {return peso() > 2500} 
+    method contieneAlgoPesadoEntre (maximo, minimo) = carga.any({a => a.peso().between(minimo,maximo)})
+
+    method estaExcedido() {return self.peso() > 2500} 
+
+
 
     method puedeCircularEnRuta(unaPeligrosidad) {
         return not self.estaExcedido() and not carga.any({c => c.peligrosidad() > unaPeligrosidad}) 
