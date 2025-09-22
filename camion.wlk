@@ -1,3 +1,4 @@
-object camion {
-
-}
+//(object camion {
+  //  const carga []
+    
+//}
