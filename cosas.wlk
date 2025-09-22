@@ -72,6 +72,7 @@ object contenedorPortuario {
         if (cosas.isEmpty()){
             peligrosidad = 0}
         else {
+            //cant.map({a => a.peligrosidad()}).max()
             peligrosidad = cosas.max({i => i.peligrosidad()}).peligrosidad()
         }
     }
