@@ -18,7 +18,7 @@ object camion {
     method todasLasCosasPeligrosas(unaPeligrosidad) {
       return carga.filter({c => c.peligrosidad() > unaPeligrosidad})
     }
-
+    //https://github.com/obj1-unahur-2025s2/camiondetransporte-pablo-origlia
     method contieneAlgoPesadoEntre (maximo, minimo) = carga.any({a => a.peso().between(minimo,maximo)})
 
     method estaExcedido() {return self.peso() > 2500} 

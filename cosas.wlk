@@ -41,6 +41,7 @@ object arenaAGranel {
     method cambiarPeso(nuevoPeso) {
         peso = nuevoPeso
     }
+    method peso() = peso
 }
 
 object bateria {

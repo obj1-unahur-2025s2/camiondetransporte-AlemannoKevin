@@ -1,4 +1,5 @@
 import cosas.*
+import camion.*
 
 describe "group of test for cosas" {
 
@@ -25,4 +26,19 @@ describe "group of test for cosas" {
     assert.equals(5, embalaje.peligrosidad())
   }
 
+  test "123 ladrillos y Bumblebee como robot" {
+    paqueteDeLadrillos.cambiarCantidad(123)
+    bumblebee.cambioDeEstado(robot)
+    camion.cargar(paqueteDeLadrillos)
+    camion.cargar(bumblebee)
+    arenaAGranel.cambiarPeso(1234567)
+    camion.cargar(arenaAGranel)
+    assert.notThat(camion.cargasPares())
+  }
+
+  test "Puede circular" {
+    arenaAGranel.cambiarPeso(1234567)
+    camion.cargar(arenaAGranel)
+    assert.notThat(camion.puedeCircularEnRuta(10))
+  }
 }
